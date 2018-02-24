@@ -16,12 +16,13 @@
                :value n
                :defaultChecked (= @selected-logger n)
                :id id 
-               :on-click #(swap! selected-logger (fn [] identity n))}]
+               :on-click #(swap! selected-logger (fn [] identity n))
+               :style {:margin-right "0.5em"}}]
       [:label {:for id} n]]))
 
 (defn logger-choices []
   [:div
-    [:ul
+    [:ul {:style {:list-style :none}}
       (doall (map logger-item (keys loggers/frameworks)))]])
 
 (defn checkstyle-config []
@@ -50,10 +51,16 @@
 
 (defn home-page []
   [:div
-    [:h3 "Choose a logging framework"]
+    [:h3 "1. Choose logging framework"]
     (logger-choices)
-    [:h3 "Checkstyle config"]
-    (checkstyle-config)])
+    [:h3 "2. Copy checkstyle config"]
+    (checkstyle-config)
+    [:h3 "3. Paste into repo"]
+    [:p "The default location is:"
+      [:pre "${projectDir}/config/checkstyle/checkstyle.xml"]]
+    [:h3 "4. Apply plugin"]
+    [:p "add to your build.gradle:"
+      [:pre "apply plugin 'checkstyle'"]]])
 
 
 
