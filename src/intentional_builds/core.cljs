@@ -30,22 +30,20 @@
     [:pre
       (str "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <!DOCTYPE module PUBLIC
-  \"-//Puppy Crawl//DTD Check Configuration 1.3//EN\"
-  \"http://www.puppycrawl.com/dtds/configuration_1_3.dtd\">
+        \"-//Puppy Crawl//DTD Check Configuration 1.3//EN\"
+        \"http://www.puppycrawl.com/dtds/configuration_1_3.dtd\">
 
 <module name=\"Checker\">
-  <module name=\"TreeWalker\">
-    <module name=\"IllegalImport\">
-      <!-- Fail when unwanted packages used. 
-           See http://checkstyle.sourceforge.net/config_imports.html#IllegalImport -->
-      <property name=\"illegalPkgs\" value=\"
-        
-        <!-- we only want to use " (loggers/describe @selected-logger) " for logging -->
-          "
-        (loggers/format-excludes @selected-logger)
-        "\"/>
+    <module name=\"TreeWalker\">
+        <module name=\"IllegalImport\">
+            <!-- Fail when unwanted packages used. 
+                 See http://checkstyle.sourceforge.net/config_imports.html#IllegalImport -->
+            <property name=\"illegalPkgs\" value=\"
+                    "
+                    (loggers/format-excludes @selected-logger)
+                  "\"/>
+        </module>
     </module>
-  </module>
 </module>")
 ]])
 

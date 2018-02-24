@@ -21,6 +21,6 @@
             (keys frameworks))))
 
 (defn format-excludes [selected]
-    (clojure.string/join ",\n          " (map #(val %)
+    (clojure.string/join ",\n                    " (map #(val %)
         (except selected))))
 
