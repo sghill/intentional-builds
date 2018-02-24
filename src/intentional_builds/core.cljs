@@ -49,8 +49,7 @@
 ]])
 
 (defn home-page []
-  [:div 
-    [:h2 "Intentional Builds"]
+  [:div
     [:h3 "Choose a logging framework"]
     (logger-choices)
     [:h3 "Checkstyle config"]
